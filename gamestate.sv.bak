@@ -1,0 +1,35 @@
+module gamestate(input logic Clk, input logic Reset, input logic keys[13:0], input logic ko, output logic st, output logic gamescreen)
+
+enum logic [1:0] {start, game} state, next_state;
+
+initial begin
+	start <= start;
+end
+
+always_ff @ (posedge Clk)
+begin
+	if(Reset)
+		state <= start;
+	state <= next_state;
+end
+
+always_comb
+begin
+	case(state)
+	start:
+	begin
+		gamescreen = 1'b1;
+		if(keys[0] == 1)
+			next_state = game;
+	end
+	game:
+	begin
+		gamescreen = 1'b0;
+		if(ko)
+			next_state = start;
+	end
+	endcase
+end
+endmodule
+
+

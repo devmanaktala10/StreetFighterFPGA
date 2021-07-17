@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri May 03 10:33:11 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : sf2
+Top-level Entity Name : sf2
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 7,384 / 114,480 ( 6 % )
+    Total combinational functions : 7,323 / 114,480 ( 6 % )
+    Dedicated logic registers : 685 / 114,480 ( < 1 % )
+Total registers : 685
+Total pins : 105 / 529 ( 20 % )
+Total virtual pins : 0
+Total memory bits : 3,310,119 / 3,981,312 ( 83 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

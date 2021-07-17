@@ -1,0 +1,38 @@
+module Ken(input logic Clk, output logic [2:0] state);
+
+enum logic [4:0]{Start, Idle1, Idle2, Idle3, Walk1, Walk2, Walk3,
+				Jump1, Jump2, Crouch, Punch1, Punch2, Kick1, Kick2,
+				JumpKick, CrouchPunch, Special1, Special2, Special3} state, next_state;
+				
+logic [5:0] IdleC = 6'd0;
+				
+	always_ff @ (posedge Clk)
+	begin
+		if (Reset) 
+			State <= Halted;
+		else 
+			State <= Next_state;
+		if(state == Start)
+			IdleC = 6'd0;
+		if(state == Idle1 || state == Idle2 || state == Idle3)
+			IdleC = IdleC + 1;
+	end
+   
+	always_comb
+	begin 
+		unique case(state):
+		Idle1:
+		begin
+			
+		end
+		Idle2:
+		begin
+		end
+		Idle3:
+		begin
+		end
+		Walk1:
+		Walk2:
+		Walk3:
+	end
+endmodule

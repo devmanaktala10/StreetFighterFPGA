@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri May 03 10:31:02 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : sf2
+Top-level Entity Name : sf2
+Family : Cyclone IV E
+Total logic elements : 7,434
+    Total combinational functions : 7,323
+    Dedicated logic registers : 685
+Total registers : 685
+Total pins : 105
+Total virtual pins : 0
+Total memory bits : 3,310,119
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

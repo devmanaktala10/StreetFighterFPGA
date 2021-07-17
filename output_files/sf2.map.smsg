@@ -1,0 +1,11 @@
+Warning (10273): Verilog HDL warning at HexDriver.sv(24): extended using "x" or "z" File: //Mac/Home/Desktop/FINALFINAL/HexDriver.sv Line: 24
+Warning (10268): Verilog HDL information at keyboard.sv(41): always construct contains both blocking and non-blocking assignments File: //Mac/Home/Desktop/FINALFINAL/keyboard.sv Line: 41
+Info (10281): Verilog HDL Declaration information at keyboard.sv(11): object "press" differs only in case from object "Press" in the same scope File: //Mac/Home/Desktop/FINALFINAL/keyboard.sv Line: 11
+Warning (10268): Verilog HDL information at ball.sv(612): always construct contains both blocking and non-blocking assignments File: //Mac/Home/Desktop/FINALFINAL/ball.sv Line: 612
+Info (10281): Verilog HDL Declaration information at ball.sv(51): object "BSP" differs only in case from object "bsp" in the same scope File: //Mac/Home/Desktop/FINALFINAL/ball.sv Line: 51
+Info (10281): Verilog HDL Declaration information at ball.sv(50): object "KSP" differs only in case from object "ksp" in the same scope File: //Mac/Home/Desktop/FINALFINAL/ball.sv Line: 50
+Info (10281): Verilog HDL Declaration information at sf2.sv(2): object "KEY" differs only in case from object "key" in the same scope File: //Mac/Home/Desktop/FINALFINAL/sf2.sv Line: 2
+Warning (10268): Verilog HDL information at Ken.sv(20): always construct contains both blocking and non-blocking assignments File: //Mac/Home/Desktop/FINALFINAL/output_files/Ken.sv Line: 20
+Warning (10268): Verilog HDL information at Bat.sv(20): always construct contains both blocking and non-blocking assignments File: //Mac/Home/Desktop/FINALFINAL/output_files/Bat.sv Line: 20
+Warning (10268): Verilog HDL information at gamestate.sv(12): always construct contains both blocking and non-blocking assignments File: //Mac/Home/Desktop/FINALFINAL/gamestate.sv Line: 12
+Info (10281): Verilog HDL Declaration information at gamestate.sv(1): object "ko" differs only in case from object "KO" in the same scope File: //Mac/Home/Desktop/FINALFINAL/gamestate.sv Line: 1

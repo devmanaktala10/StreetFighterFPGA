@@ -1,0 +1,10 @@
+module keypress(input logic Clk, input logic [7:0] keycode, input logic press, output logic keys);
+
+logic key [13:0] // w a s d t y u up down left right , . /
+
+always_ff @ (posedge Clk)
+begin
+	case 
+end
+
+endmodule

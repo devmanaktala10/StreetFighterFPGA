@@ -1,0 +1,224 @@
+module Ken_color_mapper(input logic Clk, input logic [18:0] address, input logic [4:0] ken, output logic [7:0] Red,
+								output logic [7:0] Blue, output logic [7:0] Green);
+
+	 logic [3:0] color_code_1;
+	 logic [3:0] color_code_2;
+	 logic [3:0] color_code_3;
+	 logic [3:0] color_code_4;
+	 logic [3:0] color_code_5;
+	 logic [3:0] color_code_6;
+	 logic [3:0] color_code_7;
+	 logic [3:0] color_code_8;
+	 logic [3:0] color_code_9;
+	 logic [3:0] color_code_10;
+	 logic [3:0] color_code_11;
+	 logic [3:0] color_code_12;
+	 logic [3:0] color_code_13;
+	 logic [3:0] color_code_14;
+	 logic [3:0] color_code;	
+	 logic [23:0] palette [0:15];
+	
+	always_comb
+	 begin
+		case(ken)
+		5'b00000:
+			color_code = color_code_1;
+		5'b00001:
+			color_code = color_code_1;
+		5'b00010:
+			color_code = color_code_2;
+		5'b00011:
+			color_code = color_code_3;
+		5'b00100:
+			color_code = color_code_4;
+		5'b00101:
+			color_code = color_code_4;
+		5'b00110:
+			color_code = color_code_5;
+		5'b00111:
+			color_code = color_code_6;
+		5'b01000:
+			color_code = color_code_7;
+		5'b01001:
+			color_code = color_code_7;
+		5'b01010:
+			color_code = color_code_8;
+		5'b01011:
+			color_code = color_code_7;
+		5'b01100:
+			color_code = color_code_1;
+		5'b01101:
+			color_code = color_code_1;
+		5'b01110:
+			color_code = color_code_2;
+		5'b01111:
+			color_code = color_code_3;
+		5'b10000:
+			color_code = color_code_9;
+		5'b10001:
+			color_code = color_code_9;
+		5'b10010:
+			color_code = color_code_10;
+		5'b10011:
+			color_code = color_code_9;
+		5'b10100:
+			color_code = color_code_11; //crouch
+		5'b10101:
+			color_code = color_code_11; // start crouch punch
+		5'b10110:
+			color_code = color_code_12; // crouch punch
+		5'b10111:
+			color_code = color_code_11; // crouch punish
+		5'b11000:
+			color_code = color_code_13; // start jump
+		5'b11001:
+			color_code = color_code_13; // jump 1
+		5'b11010:
+			color_code = color_code_14; // jump 2
+		5'b11011:
+			color_code = color_code_14; // jump 3
+		5'b11100:
+			color_code = color_code_13; // jump 4
+		default:
+			color_code = color_code_1;
+		endcase
+	 end
+	 
+	always_comb
+    begin
+		  palette[0] = 24'h80b8a8;
+		  palette[1] = 24'hf0b000;
+		  palette[2] = 24'hf0e079;
+		  palette[3] = 24'hf0da9a;
+		  palette[4] = 24'hf0c080;
+		  palette[5] = 24'hbf744f;
+		  palette[6] = 24'h101010;
+		  palette[7] = 24'h440403;
+		  palette[8] = 24'hf34700;
+		  palette[9] = 24'hd84000;
+		  palette[10] = 24'hb03000;
+		  palette[11] = 24'h6d3829;
+		  palette[12] = 24'hf84800;
+		  palette[13] = 24'hcc885c;
+		  palette[14] = 24'hf0f0f0;
+		  palette[15] = 24'h584048;
+	end
+	
+	always_ff @ (posedge Clk)
+	 begin
+			case(color_code)
+			4'h0:
+			begin
+				Red = 8'hff; 
+				Green = 8'hff;
+				Blue = 8'hff;
+			end
+			4'h1:
+			begin
+				Red = palette[1][23:16];
+				Green = palette[1][15:8];
+				Blue = palette[1][7:0];
+			end
+			4'h2:
+			begin
+				Red = palette[2][23:16];
+				Green = palette[2][15:8];
+				Blue = palette[2][7:0];
+			end
+			4'h3:
+			begin
+				Red = palette[3][23:16];
+				Green = palette[3][15:8];
+				Blue = palette[3][7:0];	
+			end
+			4'h4:
+			begin
+				Red = palette[4][23:16];
+				Green = palette[4][15:8];
+				Blue = palette[4][7:0];
+			end
+			4'h5:
+			begin
+				Red = palette[5][23:16];
+				Green = palette[5][15:8];
+				Blue = palette[5][7:0];
+			end
+			4'h6:
+			begin
+				Red = palette[6][23:16];
+				Green = palette[6][15:8];
+				Blue = palette[6][7:0];
+			end
+			4'h7:
+			begin
+				Red = palette[7][23:16];
+				Green = palette[7][15:8];
+				Blue = palette[7][7:0];
+			end
+			4'h8:
+			begin
+				Red = palette[8][23:16];
+				Green = palette[8][15:8];
+				Blue = palette[8][7:0];
+			end
+			4'h9:
+			begin
+				Red = palette[9][23:16];
+				Green = palette[9][15:8];
+				Blue = palette[9][7:0];
+			end
+			4'ha:
+			begin
+				Red = palette[10][23:16];
+				Green = palette[10][15:8];
+				Blue = palette[10][7:0];
+			end
+			4'hb:
+			begin
+				Red = palette[11][23:16];
+				Green = palette[11][15:8];
+				Blue = palette[11][7:0];
+			end
+			4'hc:
+			begin
+				Red = palette[12][23:16];
+				Green = palette[12][15:8];
+				Blue = palette[12][7:0];
+			end
+			4'hd:
+			begin
+				Red = palette[13][23:16];
+				Green = palette[13][15:8];
+				Blue = palette[13][7:0];
+			end
+			4'he:
+			begin
+				Red = palette[14][23:16];
+				Green = palette[14][15:8];
+				Blue = palette[14][7:0];
+			end
+			4'hf:
+			begin
+				Red = palette[15][23:16];
+				Green = palette[15][15:8];
+				Blue = palette[15][7:0];
+			end
+			endcase
+	end
+	 
+KenIdle1 ken1(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_1));
+KenIdle2 ken2(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_2));
+KenIdle3 ken3(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_3));
+KenWalk1 ken4(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_4));
+KenWalk2 ken5(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_5));
+KenWalk3 ken6(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_6));
+KenPunch1 ken7(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_7));
+KenPunch2 ken8(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_8));
+KenKick1 ken9(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_9));
+KenKick2 ken10(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_10));
+KenCrouch ken11(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_11));
+KenCrouchPunch ken12(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_12));
+KenJump1 ken13(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_13));
+KenJump2 ken14(.data_In(), .write_address(), .read_address(address), .we(), .Clk(Clk), .data_Out(color_code_14));
+
+endmodule
